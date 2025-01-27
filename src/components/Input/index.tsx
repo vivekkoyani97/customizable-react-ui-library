@@ -1,9 +1,9 @@
 import { CustomInputProps } from "../../types/input";
-import AntdInput from "./antdInput";
-import MuiInput from "./muiInput";
-import PrimeInput from "./primeInput";
+import { AntdCheckBox, AntdInput, AntdRadio } from "./antdInput";
+import { MuiCheckBox, MuiInput, MuiRadio } from "./muiInput";
+import { PrimeCheckBox, PrimeInput, PrimeRadio } from "./primeInput";
 
-const CustomInput: React.FC<CustomInputProps> = ({ type, label, value, onChange, library = "prime-react", variant, ...rest }) => {
+const CustomInput: React.FC<CustomInputProps> = ({ type, label, value, onChange, library = "material-ui", variant, ...rest }) => {
     if (library === 'material-ui') {
         switch (type) {
             case 'text':
@@ -12,6 +12,14 @@ const CustomInput: React.FC<CustomInputProps> = ({ type, label, value, onChange,
                 return (
                     <MuiInput label={label} type={type} onChange={() => { }} value={value} {...rest} />
                 );
+            case 'checkbox':
+                return (
+                    <MuiCheckBox label={label} type={type} onChange={() => { }} value={value} {...rest} />
+                )
+            case 'radio':
+                return (
+                    <MuiRadio label={label} type={type} onChange={() => { }} value={value} {...rest} />
+                )
             default:
                 return (
                     <MuiInput label={label} type={type} onChange={() => { }} value={value} {...rest} />
@@ -26,6 +34,14 @@ const CustomInput: React.FC<CustomInputProps> = ({ type, label, value, onChange,
                 return (
                     <AntdInput type={type} onChange={() => { }} value={value} {...rest} />
                 );
+            case 'checkbox':
+                return (
+                    <AntdCheckBox label={label} type={type} onChange={() => { }} value={value} {...rest} />
+                )
+            case 'radio':
+                return (
+                    <AntdRadio label={label} type={type} onChange={() => { }} value={value} {...rest} />
+                )
             default:
                 return (
                     <AntdInput type={type} onChange={() => { }} value={value} {...rest} />
@@ -40,6 +56,14 @@ const CustomInput: React.FC<CustomInputProps> = ({ type, label, value, onChange,
                 return (
                     <PrimeInput type={type} onChange={() => { }} value={value} {...rest} />
                 );
+            case 'checkbox':
+                return (
+                    <PrimeCheckBox label={label} type={type} onChange={() => { }} value={value} {...rest} />
+                )
+            case 'radio':
+                return (
+                    <PrimeRadio label={label} type={type} onChange={() => { }} value={value} {...rest} />
+                )
             default:
                 return (
                     <PrimeInput type={type} onChange={() => { }} value={value} {...rest} />
