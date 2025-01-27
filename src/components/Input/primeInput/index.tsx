@@ -1,15 +1,15 @@
 import { InputText } from 'primereact/inputtext';
 import { Checkbox } from "primereact/checkbox";
-import { RadioButton } from 'primereact/radiobutton';        
+import { RadioButton } from 'primereact/radiobutton';
 import { CustomInputProps } from '../../../types/input';
 
-export const PrimeInput: React.FC<CustomInputProps> = ({ type, label, value, onChange, library = "prime-react", variant, ...rest }) => {
+export const PrimeInput: React.FC<CustomInputProps> = ({ type, label, value, onChange, variant, ...rest }) => {
     return (
         <InputText type={type} onChange={() => { }} value={value} {...rest} />
     )
 }
 
-export const PrimeCheckBox: React.FC<CustomInputProps> = ({ type, label, value, onChange, library = "prime-react", variant, ...rest }) => {
+export const PrimeCheckBox: React.FC<CustomInputProps> = ({ type, label, value, onChange, variant, ...rest }) => {
     return (
         <>
             <Checkbox onChange={() => { }} checked={value} {...rest} />
@@ -18,7 +18,7 @@ export const PrimeCheckBox: React.FC<CustomInputProps> = ({ type, label, value, 
     )
 }
 
-export const PrimeRadio: React.FC<CustomInputProps> = ({ type, label, value, onChange, library = "prime-react", variant, ...rest }) => {
+export const PrimeRadio: React.FC<CustomInputProps> = ({ type, label, value, onChange, variant, ...rest }) => {
     return (
         <>
             <RadioButton onChange={() => { }} checked={value} {...rest} />
